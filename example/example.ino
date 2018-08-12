@@ -6,6 +6,7 @@ void setup()
 {
     Serial.begin(115200);
     Wire.begin();
+    pwr_mgmt.attatch(Wire);
 }
 
 void loop()
