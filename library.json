@@ -1,0 +1,20 @@
+{
+    "name": "MAX17048",
+    "keywords": "i2c,wire,battery,fuel gauge",
+    "description": "Arduino library for MAX17048/MAX17049 1-Cell/2-Cell Fuel Gauge with ModelGauge",
+    "repository":
+    {
+        "type": "git",
+        "url": "https://github.com/hideakitai/MAX17048.git"
+    },
+    "authors":
+    {
+        "name": "Hideaki Tai",
+        "url": "https://github.com/hideakitai",
+        "maintainer": true
+    },
+    "version": "0.1.0",
+    "license": "MIT",
+    "frameworks": "arduino",
+    "platforms": "*"
+}
