@@ -3,9 +3,9 @@
 Arduino library for [MAX17048/MAX17049](https://www.maximintegrated.com/en/products/power/battery-management/MAX17048.html) 1-Cell/2-Cell Fuel Gauge with ModelGauge
 
 
-# Usage
+## Usage
 
-```
+```C++
 #include "MAX17048.h"
 
 MAX17048 pwr_mgmt;
@@ -34,6 +34,6 @@ void loop()
 }
 ```
 
-# License
+## License
 
 MIT
