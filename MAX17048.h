@@ -202,7 +202,7 @@ namespace EmbeddedDevices
             write(REG::STATUS, v);
         }
 
-        float crate() { return (float)read(REG::CRATE) * 0.208f; } // % per hour
+        float crate() { return (int16_t)read(REG::CRATE) * 0.208f; } // % per hour
 
         uint8_t status() { return read(REG::STATUS); }
         bool highVoltage() { return bitRead(alertFlags(), 1); }
