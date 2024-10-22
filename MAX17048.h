@@ -51,7 +51,7 @@ namespace EmbeddedDevices
         uint8_t percent() { return (uint8_t)(read(REG::SOC) / 256); }
         float accuratePercent() { return (float)read(REG::SOC) / 256.f; }
 
-        bool quickStart()
+        void quickStart()
         {
             uint16_t v = read(REG::MODE);
             bitSet(v, 14);
@@ -73,7 +73,7 @@ namespace EmbeddedDevices
         bool isHibernating() { return bitRead(read(REG::MODE), 12); }
         float hibernateActTh() { return (float)highByte(read(REG::HIBRT)) * 0.00125; }
         float hibernateHibTh() { return (float)lowByte(read(REG::HIBRT)) * 0.208; }
-        uint8_t hibernateActTh(float th)
+        void hibernateActTh(float th)
         {
             uint16_t v = read(REG::HIBRT) & 0xFF00;
             if (th > 0.0)
@@ -83,7 +83,7 @@ namespace EmbeddedDevices
             }
             write(REG::HIBRT, v);
         }
-        uint8_t hibernateHibTh(float th)
+        void hibernateHibTh(float th)
         {
             uint16_t v = read(REG::HIBRT) & 0x00FF;
             if (th > 0.0)
@@ -211,7 +211,7 @@ namespace EmbeddedDevices
         bool lowSOC() { return bitRead(alertFlags(), 4); }
         bool chnageSOC() { return bitRead(alertFlags(), 5); }
 
-        bool reset() { write(REG::CMD, 0x5400); }
+        void reset() { write(REG::CMD, 0x5400); }
 
     private:
 
